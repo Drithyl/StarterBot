@@ -1,0 +1,7 @@
+# Directories
+/config
+/node_modules
+
+# Package files
+.env
+.eslintrc.json
