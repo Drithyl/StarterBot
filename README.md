@@ -20,7 +20,7 @@ All new commands should be placed into the commands/files folder. They should al
             .setName("myCommand")
             .setDescription("This is a command")
             ...,
-        async execute(interaction)
+        execute: async function(interaction)
         {
             // Your command behaviour here
         }
