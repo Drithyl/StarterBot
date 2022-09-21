@@ -3,12 +3,14 @@ A simple Discord bot with the basic structure already coded. There are example c
 
 ## How to run
 
-1. Run the index.js file ("node index.js", or "node ."). You will get prompts to generate the first config.json file. It will contain the bot's login token, the client id, and the id of whichever guild you would like to use to test it.
-2. Quit the program (you can use Ctrl+C).
-3. Open the config.json file created in the config directory.
-4. Using the oauth2 link generated in the file, invite the bot to your test guild.
-5. Run the deploy-commands-to-guild.js script ("node deploy-comnmands-to-guild.js"). This will deploy the example slash commands to the test guild so they can be used there.
-6. Run the index.js file again, as in the first step. Now the bot should be logged in and the slash commands should be visible in the test guild.
+1. Open a console on the repository's folder.
+2. Run the command "npm install" to install all the dependencies.
+3. Run the index.js file ("node index.js", or "node ."). You will get prompts to generate the first config.json file. It will contain the bot's login token, the client id, and the id of whichever guild you would like to use to test it.
+4. Quit the program (you can use Ctrl+C).
+5. Open the config.json file created in the config directory.
+6. Using the oauth2 link generated in the file, invite the bot to your test guild.
+7. Run the deploy-commands-to-guild.js script ("node deploy-comnmands-to-guild.js"). This will deploy the example slash commands to the test guild so they can be used there.
+8. Run the index.js file again, as in the first step. Now the bot should be logged in and the slash commands should be visible in the test guild.
 
 ## Commands
 
