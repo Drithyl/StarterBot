@@ -1,27 +1,32 @@
 const { SlashCommandBuilder } = require("discord.js");
 
+const USER_SUBCOMMAND_NAME = "user";
+const SERVER_SUBCOMMAND_NAME = "server";
+const USER_OPTION_NAME = "target";
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("info")
 		.setDescription("Get info about a user or a server!")
         .addSubcommand(subcommand =>
-            subcommand.setName("user")
+            subcommand.setName(USER_SUBCOMMAND_NAME)
             .setDescription("Info about a user!")
             .addUserOption(option =>
-                option.setName("target")
+                option.setName(USER_OPTION_NAME)
                 .setDescription("The user to get info on")
             )
         )
         .addSubcommand(subcommand =>
-            subcommand.setName("server")
+            subcommand.setName(SERVER_SUBCOMMAND_NAME)
             .setDescription("Info about the server!")
         ),
+
 	execute: async function(interaction)
     {
-        if (interaction.options.getSubcommand() === "server")
+        if (interaction.options.getSubcommand() === SERVER_SUBCOMMAND_NAME)
             await onServerSubcommand(interaction);
 
-        else if (interaction.options.getSubcommand("user"))
+        else if (interaction.options.getSubcommand(USER_SUBCOMMAND_NAME))
             await onUserSubcommand(interaction);
 
         else
@@ -44,7 +49,7 @@ async function onServerSubcommand(interaction)
 
 async function onUserSubcommand(interaction)
 {
-    const user = interaction.options.getUser("target");
+    const user = interaction.options.getUser(USER_OPTION_NAME);
 
     if (user != null)
     {

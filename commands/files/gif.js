@@ -1,11 +1,13 @@
 const { SlashCommandBuilder } = require("discord.js");
 
+const CATEGORY_OPTION_NAME = "category";
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("gif")
 		.setDescription("Sends a random gif!")
         .addStringOption(option =>
-            option.setName("category")
+            option.setName(CATEGORY_OPTION_NAME)
             .setDescription("The gif category")
             .setRequired(true)
             .addChoices(
@@ -14,8 +16,10 @@ module.exports = {
                 { name: "Movie", value: "gif_movie" }
             )
         ),
+
 	execute: async function(interaction)
     {
-		await interaction.reply("Imagine this is a gif! :D");
+        const category = interaction.options.getString(CATEGORY_OPTION_NAME);
+		await interaction.reply(`Imagine this is a <${category}> gif! :D`);
 	}
 };

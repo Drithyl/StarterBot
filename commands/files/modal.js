@@ -5,10 +5,14 @@ const {
     TextInputBuilder,
     TextInputStyle } = require("discord.js");
 
+const COLOR_INPUT_NAME = "favouriteColourInput";
+const HOBBY_INPUT_NAME = "hobbiesInput";
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("modal")
 		.setDescription("Pops up a modal!"),
+
 	execute: async function(interaction)
 	{
         const modal = new ModalBuilder()
@@ -17,7 +21,7 @@ module.exports = {
             .setTitle("My Modal");
 
         const favouriteColourInput = new TextInputBuilder()
-            .setCustomId("favouriteColourInput")
+            .setCustomId(COLOR_INPUT_NAME)
             // The prompt that the user sees for this input box
             .setLabel("What's your favourite colour?")
             // .Short creates an input box for a single line of text
@@ -34,7 +38,7 @@ module.exports = {
             .setRequired(true);
 
         const hobbiesInput = new TextInputBuilder()
-            .setCustomId("hobbiesInput")
+            .setCustomId(HOBBY_INPUT_NAME)
             // The prompt that the user sees for this input box
             .setLabel("What are some of your favourite hobbies?")
             // .Paragraph creates an input box for multiple lines of text
@@ -57,6 +61,7 @@ module.exports = {
         // Pop the modal up to the user
         await interaction.showModal(modal);
 	},
+
     componentHandlers:
     {
         modal: onModalSubmitHandler,
@@ -71,8 +76,8 @@ async function onModalSubmitHandler(modalInteraction)
     const inputFields = modalInteraction.fields.fields;
 
     // Get each field by the customId we defined when creating them above
-    const favouriteColourField = inputFields.get("favouriteColourInput");
-    const hobbiesField = inputFields.get("hobbiesInput");
+    const favouriteColourField = inputFields.get(COLOR_INPUT_NAME);
+    const hobbiesField = inputFields.get(HOBBY_INPUT_NAME);
 
     // IMPORTANT - Field values can also be extracted the following way:
     // modalInteraction.fields.getTextInputValue("favouriteColourInput")

@@ -7,6 +7,7 @@ module.exports = {
         // Cannot be used  by DM. By default all global commands
         // (not guild ones) can be used by DM
         .setDMPermission(false),
+
 	execute: async function(interaction)
 	{
 		await interaction.reply("Beep!");

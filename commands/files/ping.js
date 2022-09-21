@@ -5,6 +5,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("ping")
 		.setDescription("Replies with Pong!"),
+
 	execute: async function(interaction)
 	{
 		// Defer response so we can take longer than 3 seconds to respond

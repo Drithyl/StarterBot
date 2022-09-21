@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 
+const BREED_OPTION_NAME = "breed";
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("dog")
@@ -17,7 +19,7 @@ module.exports = {
             "es-ES": "Recibe un perro adorable!"
         })
         .addStringOption(option =>
-            option.setName("breed")
+            option.setName(BREED_OPTION_NAME)
             .setDescription("Breed of dog")
             .setNameLocalizations({
                 pl: "rasa",
@@ -32,9 +34,10 @@ module.exports = {
                 "es-ES": "Raza de perro"
             })
         ),
+
 	execute: async function(interaction)
     {
-        const breed = interaction.options.getString("breed");
+        const breed = interaction.options.getString(BREED_OPTION_NAME);
 		await interaction.reply(`Imagine this is a <${breed}> dog picture! :D`);
 	}
 };

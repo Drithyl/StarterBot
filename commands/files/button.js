@@ -11,6 +11,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("button")
 		.setDescription("Get a mystery button!"),
+
 	execute: async function(interaction)
 	{
         // A button, like any other message component, must be

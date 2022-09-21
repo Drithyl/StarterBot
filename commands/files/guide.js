@@ -1,19 +1,23 @@
 const { SlashCommandBuilder } = require("discord.js");
 
+const QUERY_OPTION_NAME = "query";
+const VERSION_OPTION_NAME = "version";
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("guide")
 		.setDescription("Search discordjs.guide!")
         .addStringOption(option =>
-            option.setName("query")
+            option.setName(QUERY_OPTION_NAME)
             .setDescription("Phrase to search for")
             .setAutocomplete(true)
         )
         .addStringOption(option =>
-            option.setName("version")
+            option.setName(VERSION_OPTION_NAME)
             .setDescription("Phrase to search for")
             .setAutocomplete(true)
         ),
+
     // We will receive below the autocompleted interaction with
     // the final input value.
     // Autocomplete interactions CANNOT be deferred; they must be
@@ -22,7 +26,7 @@ module.exports = {
     // response at one time.
 	execute: async function(interaction)
     {
-        const input = interaction.options.getString("query");
+        const input = interaction.options.getString(QUERY_OPTION_NAME);
 		await interaction.reply("Your query was: " + input);
 	},
     // NOTES: an autocomplete interaction is a helper for a user to
@@ -54,7 +58,7 @@ module.exports = {
 
 		let choices;
 
-		if (focusedOption.name === "query")
+		if (focusedOption.name === QUERY_OPTION_NAME)
 		{
 			// Array of choices that are available to select
 			choices = [
@@ -66,7 +70,7 @@ module.exports = {
 			];
 		}
 
-		if (focusedOption.name === "version")
+		if (focusedOption.name === VERSION_OPTION_NAME)
 		{
 			// Array of choices that are available to select
 			choices = ["v9", "v11", "v12", "v13", "v14"];

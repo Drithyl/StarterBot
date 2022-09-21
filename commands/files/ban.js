@@ -1,11 +1,13 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 
+const TARGET_OPTION_NAME = "target";
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("ban")
 		.setDescription("Select a member and ban them (but not really).")
         .addUserOption(option =>
-            option.setName("target")
+            option.setName(TARGET_OPTION_NAME)
             .setDescription("The member to ban.")
             .setRequired(true)
         )
@@ -17,9 +19,10 @@ module.exports = {
             PermissionFlagsBits.KickMembers |
             PermissionFlagsBits.BanMembers
         ),
+
 	execute: async function(interaction)
 	{
-        const target = interaction.options.getUser("target");
+        const target = interaction.options.getUser(TARGET_OPTION_NAME);
 		await interaction.reply(`As if you could ban ${target.username}! :D`);
 	}
 };

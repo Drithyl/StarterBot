@@ -9,6 +9,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("select")
 		.setDescription("Gives you options!"),
+
 	execute: async function(interaction)
 	{
         // A select, like any other message component, must be
@@ -55,6 +56,7 @@ module.exports = {
             components: [ actionRow ]
         });
 	},
+
     componentHandlers:
     {
         select: onSelectHandler

@@ -4,6 +4,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("user")
 		.setDescription("Replies with user info!"),
+
 	execute: async function(interaction)
 	{
 		const tag = interaction.user.tag;
