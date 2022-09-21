@@ -9,7 +9,7 @@ A simple Discord bot with the basic structure already coded. There are example c
 4. Quit the program (you can use Ctrl+C).
 5. Open the config.json file created in the config directory.
 6. Using the oauth2 link generated in the file, invite the bot to your test guild.
-7. Run the deploy-commands-to-guild.js script ("node deploy-comnmands-to-guild.js"). This will deploy the example slash commands to the test guild so they can be used there.
+7. Run the deploy-commands-to-guild.js script ("node deploy-comnmands-to-guild.js"). This will deploy the example slash commands to the test guild so they can be used there. Keep in mind you will need to do this whenever you have created or deleted commands.
 8. Run the index.js file again, as in the first step. Now the bot should be logged in and the slash commands should be visible in the test guild.
 
 ## Commands
@@ -30,6 +30,10 @@ All new commands should be placed into the commands/files folder. They should al
 ```
     
 The example commands show most of the functionality possible in Discord v14, including command options, subcommands, option autocomplete, localization, buttons, selects, modals and application context commands (accessed by right-clicking the right target on Discord, then going to Apps>Your bot name).
+
+## Deploying commands globally
+
+Once you are ready to deploy your bot into other guilds, you should first deploy your commands globally, so that they are available anywhere that the bot is present. You can do this by running the deploy-global-commands.js script in the repository's folder. Keep in mind you need to do this whenever you have created or deleted commands.
 
 ## Events
 
