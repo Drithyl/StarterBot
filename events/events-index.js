@@ -1,1 +1,1 @@
-module.exports.load = require("./load-events");
+module.exports.load = require("./load-events").load;
