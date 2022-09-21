@@ -32,7 +32,7 @@ All new commands should be placed into the commands/files folder. They should al
             // a button or a select, you need to add each of their
             // customId as a key here. The value of the key will be
             // the function that will be called when that button or
-            // select will be interacted with by the user on Discord.
+            // select will be interacted with by the user on Discord
             exampleId: someFunction
         }
     };
