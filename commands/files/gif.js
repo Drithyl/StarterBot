@@ -14,7 +14,7 @@ module.exports = {
                 { name: "Movie", value: "gif_movie" }
             )
         ),
-	async execute(interaction)
+	execute: async function(interaction)
     {
 		await interaction.reply("Imagine this is a gif! :D");
 	}

@@ -17,7 +17,7 @@ module.exports = {
             PermissionFlagsBits.KickMembers |
             PermissionFlagsBits.BanMembers
         ),
-	async execute(interaction)
+	execute: async function(interaction)
 	{
         const target = interaction.options.getUser("target");
 		await interaction.reply(`As if you could ban ${target.username}! :D`);

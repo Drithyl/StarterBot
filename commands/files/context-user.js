@@ -14,7 +14,7 @@ module.exports =
         // Sets the type of context menu command
         .setType(ApplicationCommandType.User),
 
-    async execute(interaction)
+    execute: async function(interaction)
     {
         const username = interaction.targetUser;
         await interaction.reply(`User: ${username}`);

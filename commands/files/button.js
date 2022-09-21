@@ -11,7 +11,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("button")
 		.setDescription("Get a mystery button!"),
-	async execute(interaction)
+	execute: async function(interaction)
 	{
         // A button, like any other message component, must be
         // part of an ActionRow. A message can have a max of

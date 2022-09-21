@@ -20,7 +20,7 @@ module.exports = {
     // responded to within 3 seconds no matter what. Additionally,
     // only a maximum of 25 choices is allowed on the autocomplete
     // response at one time.
-	async execute(interaction)
+	execute: async function(interaction)
     {
         const input = interaction.options.getString("query");
 		await interaction.reply("Your query was: " + input);

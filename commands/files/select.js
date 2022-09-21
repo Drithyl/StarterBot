@@ -9,7 +9,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("select")
 		.setDescription("Gives you options!"),
-	async execute(interaction)
+	execute: async function(interaction)
 	{
         // A select, like any other message component, must be
         // part of an ActionRow. A message can have a max of

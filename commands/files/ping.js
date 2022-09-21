@@ -5,7 +5,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("ping")
 		.setDescription("Replies with Pong!"),
-	async execute(interaction)
+	execute: async function(interaction)
 	{
 		// Defer response so we can take longer than 3 seconds to respond
 		// Ephemeral responses only show up for the command sender

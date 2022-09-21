@@ -14,7 +14,7 @@ module.exports =
         // Sets the type of context menu command
         .setType(ApplicationCommandType.Message),
 
-    async execute(interaction)
+    execute: async function(interaction)
     {
         const message = interaction.targetMessage;
         await interaction.reply(`Message content:\n\n${message.content}`);

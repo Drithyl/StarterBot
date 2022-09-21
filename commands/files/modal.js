@@ -9,7 +9,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("modal")
 		.setDescription("Pops up a modal!"),
-	async execute(interaction)
+	execute: async function(interaction)
 	{
         const modal = new ModalBuilder()
             // This specific modal will be identified by this id

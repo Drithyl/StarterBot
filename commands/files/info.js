@@ -16,7 +16,7 @@ module.exports = {
             subcommand.setName("server")
             .setDescription("Info about the server!")
         ),
-	async execute(interaction)
+	execute: async function(interaction)
     {
         if (interaction.options.getSubcommand() === "server")
             await onServerSubcommand(interaction);

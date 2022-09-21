@@ -32,7 +32,7 @@ module.exports = {
                 "es-ES": "Raza de perro"
             })
         ),
-	async execute(interaction)
+	execute: async function(interaction)
     {
         const breed = interaction.options.getString("breed");
 		await interaction.reply(`Imagine this is a <${breed}> dog picture! :D`);

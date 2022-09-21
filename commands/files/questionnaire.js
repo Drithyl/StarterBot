@@ -40,7 +40,7 @@ module.exports = {
             option.setName("attachment")
             .setDescription("Best meme?")
         ),
-	async execute(interaction)
+	execute: async function(interaction)
     {
         const string = interaction.options.getString("input");
         const boolean = interaction.options.getBoolean("bool");

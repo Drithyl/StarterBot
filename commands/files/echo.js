@@ -10,7 +10,7 @@ module.exports = {
             .setMinLength(1)
             .setRequired(true)
         ),
-	async execute(interaction)
+	execute: async function(interaction)
     {
         const input = interaction.options.get("input").value;
 		await interaction.reply(input);

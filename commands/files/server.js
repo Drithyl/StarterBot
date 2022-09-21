@@ -4,7 +4,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("server")
 		.setDescription("Replies with sever info!"),
-	async execute(interaction)
+	execute: async function(interaction)
 	{
 		const guildName = interaction.guild.name;
 		const memberCount = interaction.guild.memberCount;
