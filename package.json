@@ -1,0 +1,19 @@
+{
+  "name": "botrpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "No test registered",
+    "deployCommands": "node deploy-commands-to-guild.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.23.1"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^1.1.0",
+    "discord.js": "^14.3.0"
+  }
+}
