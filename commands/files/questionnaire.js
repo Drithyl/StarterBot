@@ -3,7 +3,6 @@ const { SlashCommandBuilder } = require("discord.js");
 const INPUT_OPTION_NAME = "input";
 const BOOL_OPTION_NAME = "bool";
 const USER_OPTION_NAME = "user";
-const MEMBER_OPTION_NAME = "target";
 const CHANNEL_OPTION_NAME = "destination";
 const ROLE_OPTION_NAME = "role";
 const INT_OPTION_NAME = "int";
@@ -26,10 +25,6 @@ module.exports = {
         .addUserOption(option =>
             option.setName(USER_OPTION_NAME)
             .setDescription("Closest friend?")
-        )
-        .addMemberOption(option =>
-            option.setName(MEMBER_OPTION_NAME)
-            .setDescription("Worst enemy?")
         )
         .addChannelOption(option =>
             option.setName(CHANNEL_OPTION_NAME)
@@ -61,7 +56,7 @@ module.exports = {
         const string = interaction.options.getString(INPUT_OPTION_NAME);
         const boolean = interaction.options.getBoolean(BOOL_OPTION_NAME);
         const user = interaction.options.getUser(USER_OPTION_NAME);
-        const member = interaction.options.getMember(MEMBER_OPTION_NAME);
+        const member = interaction.options.getMember(USER_OPTION_NAME);
         const channel = interaction.options.getChannel(CHANNEL_OPTION_NAME);
         const role = interaction.options.getRole(ROLE_OPTION_NAME);
         const integer = interaction.options.getInteger(INT_OPTION_NAME);
