@@ -13,7 +13,7 @@ A simple Discord bot with the basic structure already coded. There are example c
 ## Commands
 
 All new commands should be placed into the commands/files folder. They should all follow the same structure as the already existing command files: exporting an object with this structure:
-
+```JavaScript
     {
         // Command creation using discord.js' SlashCommandBuiilder
         data: new SlashCommandBuilder()
@@ -25,6 +25,7 @@ All new commands should be placed into the commands/files folder. They should al
             // Your command behaviour here
         }
     };
+```
     
 The example commands show most of the functionality possible in Discord v14, including command options, subcommands, option autocomplete, localization, buttons, selects, modals and application context commands (accessed by right-clicking the right target on Discord, then going to Apps>Your bot name).
 
