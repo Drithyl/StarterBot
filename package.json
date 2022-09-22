@@ -1,5 +1,5 @@
 {
-  "name": "botrpg",
+  "name": "starterbot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "No test registered",
     "deployCommands": "node deploy-commands-to-guild.js"
   },
-  "author": "",
+  "author": "Drithyl",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.23.1"
