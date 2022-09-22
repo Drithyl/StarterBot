@@ -1,5 +1,5 @@
 # StarterBot
-A simple Discord bot with the basic structure already coded. There are example commands for most functionality, and a config generator.
+A simple Discord bot with the basic structure already coded. There are example commands for most functionality, and a config generator. It's been made following the [discord.js guides](https://discordjs.guide/#before-you-begin), currently updated to v14.
 
 ## How to run
 
